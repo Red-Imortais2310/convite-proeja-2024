@@ -1,0 +1,27 @@
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Pastas de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules (caso adicione npm futuramente)
+node_modules/
+package-lock.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# Arquivos temporários
+*.tmp
+*.temp
+~*
+
+# Arquivos de backup
+*.bak
+*.backup

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confraternização Proeja - IFSP Cubatão</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="imagens/Ifsp_logo.jpg" alt="IFSP Logo">
+                <div class="logo-text">
+                    <h1>Proeja</h1>
+                    <span>IFSP Cubatão</span>
+                </div>
+            </div>
+
+            <nav class="nav">
+                <a href="#home" class="nav-link active">Início</a>
+                <a href="#evento" class="nav-link">Evento</a>
+                <a href="#galeria" class="nav-link">Galeria</a>
+                <a href="#galeria-eventos" class="nav-link">Galeria de Eventos</a>
+                <a href="#contato" class="nav-link">Contato</a>
+            </nav>
+
+            <!-- Menu Mobile -->
+            <button class="mobile-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <img src="imagens/logoconvite1.png" alt="Logo Convite Esquerda" class="hero-image-left">
+        <div class="hero-content">
+            <h1>Confraternização ProEJA 2024</h1>
+            <h2>1º e 2º Ano - IFSP Campus Cubatão</h2>
+            <p>Celebrando nossa jornada educacional com alegria e união!</p>
+            <button class="cta-button" onclick="scrollToSection('evento')">Saiba Mais</button>
+        </div>
+        <img src="imagens/Ifsp_logo.jpg" alt="Logo IFSP Direita" class="hero-image-right">
+    </section>
+
+
+    <!-- Evento Section -->
+    <section id="evento" class="evento">
+        <div class="container">
+            <h2>Sobre o Evento</h2>
+            <div class="evento-grid">
+                <div class="evento-card">
+                    <div class="card-icon">📅</div>
+                    <h3>Data e Horário</h3>
+                    <p>12 de Dezembro de 2024<br>Das 19h às 23h</p>
+                </div>
+                <div class="evento-card">
+                    <div class="card-icon">📍</div>
+                    <h3>Local</h3>
+                    <p>Sala 120<br>IFSP Campus Cubatão</p>
+                </div>
+                <div class="evento-card">
+                    <div class="card-icon">🎉</div>
+                    <h3>Atividades</h3>
+                    <p>Jogos, música, comidas típicas e muito mais!</p>
+                </div>
+                <div class="evento-card" onclick="openParticipantesPopup()" style="cursor: pointer;">
+                    <div class="card-icon">👥</div>
+                    <h3>Participantes</h3>
+                    <p>Diretores/Professores 1º e 2º ano<br>Proeja</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria Section -->
+    <section id="galeria" class="galeria">
+        <div class="container">
+            <h2>Galeria dos Alunos</h2>
+            <p class="galeria-subtitle">Conheça nossos queridos estudantes do Proeja</p>
+
+            <div class="carousel-container" id="carousel-alunos">
+                <button class="carousel-btn prev">❮</button>
+                <div class="carousel">
+                    <div class="carousel-track" id="carouselTrack-alunos">
+                        <!-- Fotos dos alunos (20 espaços) -->
+                        <div class="carousel-slide">
+                            <img src="imagens/tigre.webp" alt="tigre">
+                            <h4>Ana Silva</h4>
+                            <p>1º Ano</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/228B22/ffffff?text=Aluno+2" alt="Aluno 2">
+                            <h4>João Santos</h4>
+                            <p>1º Ano</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/45B7D1/ffffff?text=Aluno+3" alt="Aluno 3">
+                            <h4>Maria Costa</h4>
+                            <p>2º Ano</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/96CEB4/ffffff?text=Aluno+4" alt="Aluno 4">
+                            <h4>Pedro Lima</h4>
+                            <p>1º Ano</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/FECA57/ffffff?text=Aluno+5" alt="Aluno 5">
+                            <h4>Carla Mendes</h4>
+                            <p>2º Ano</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/FF9FF3/ffffff?text=Aluno+6" alt="Aluno 6">
+                            <h4>Roberto Alves</h4>
+                            <p>1º Ano</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/54A0FF/ffffff?text=Aluno+7" alt="Aluno 7">
+                            <h4>Luciana Pereira</h4>
+                            <p>2º Ano</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/5F27CD/ffffff?text=Aluno+8" alt="Aluno 8">
+                            <h4>Carlos Rodrigues</h4>
+                            <p>1º Ano</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/00D2D3/ffffff?text=Aluno+9" alt="Aluno 9">
+                            <h4>Fernanda Oliveira</h4>
+                            <p>2º Ano</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/FF6348/ffffff?text=Aluno+10" alt="Aluno 10">
+                            <h4>Marcos Silva</h4>
+                            <p>1º Ano</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/2ED573/ffffff?text=Aluno+11" alt="Aluno 11">
+                            <h4>Patricia Souza</h4>
+                            <p>2º Ano</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/A55EEA/ffffff?text=Aluno+12" alt="Aluno 12">
+                            <h4>Bruno Ferreira</h4>
+                            <p>1º Ano</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/26C0CE/ffffff?text=Aluno+13" alt="Aluno 13">
+                            <h4>Juliana Martins</h4>
+                            <p>2º Ano</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/FD7272/ffffff?text=Aluno+14" alt="Aluno 14">
+                            <h4>André Carvalho</h4>
+                            <p>1º Ano</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/9AECDB/ffffff?text=Aluno+15" alt="Aluno 15">
+                            <h4>Simone Barbosa</h4>
+                            <p>2º Ano</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/D63031/ffffff?text=Aluno+16" alt="Aluno 16">
+                            <h4>Ricardo Gomes</h4>
+                            <p>1º Ano</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/6C5CE7/ffffff?text=Aluno+17" alt="Aluno 17">
+                            <h4>Amanda Nascimento</h4>
+                            <p>2º Ano</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/A29BFE/ffffff?text=Aluno+18" alt="Aluno 18">
+                            <h4>Diego Torres</h4>
+                            <p>1º Ano</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/FD79A8/ffffff?text=Aluno+19" alt="Aluno 19">
+                            <h4>Vanessa Cruz</h4>
+                            <p>2º Ano</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/FDCB6E/ffffff?text=Aluno+20" alt="Aluno 20">
+                            <h4>Gustavo Ramos</h4>
+                            <p>1º Ano</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next">❯</button>
+            </div>
+            <!-- Indicadores do carrossel -->
+            <div class="carousel-indicators" id="carouselIndicators-alunos"></div>
+        </div>
+    </section>
+    <br>
+    <section id="galeria-eventos" class="galeria">
+        <div class="container">
+            <h2>Eventos durante a ano de 2025</h2>
+            <p class="galeria-subtitle">Conheça os eventos que marcaram nosso ano letivo</p>
+
+            <div class="carousel-container" id="carousel-eventos">
+                <button class="carousel-btn prev">❮</button>
+                <div class="carousel">
+                    <div class="carousel-track" id="carouselTrack-eventos">
+                        <!-- Fotos dos eventos -->
+                        <div class="carousel-slide">
+                            <img src="imagens/OFICINA POEMA E LITERATURA.jpg" alt="OFICINA1">
+                            <h4>Oficina Poema e Literatura 2º Ano</h4>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="imagens/ANIVERSARIO PROFESSOR LEANDRO.jpg" alt="aniversario">
+                            <h4>Aniversário do professor Leandro no 1ºAno</h4>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="imagens/Docentes na oficina compostagem.jpg" alt="docentes">
+                            <h4>Docentes na oficina de compostagem</h4>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="imagens/oficina compostagem.jpg" alt="OFICINA2">
+                            <h4>Oficina Compostagem 2ºAno</h4>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="imagens/oficina poema 2.jpg" alt="OFICINA3">
+                            <h4>Oficina Poema e Literatura 2ºAno</h4>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="imagens/arteterapia 2 ano.jpg" alt="arteterapia">
+                            <h4>Arteterapia 2ºAno</h4>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="imagens/tecendo relações.jpg" alt="tecendo">
+                            <h4>Tecendo relações 2ºAno</h4>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="imagens/Apresentação site 1 ano.jpg" alt="jornal">
+                            <h4>Apresentação Site Jornalístico 1ºAno</h4>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="imagens/apresentação site 1 ano 2.jpg" alt="jornal2">
+                            <h4>Apresentação Site Jornalístico 1ºAno</h4>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="imagens/arraia do saber.jpg" alt="arraia">
+                            <h4>Arraiá do Saber 1ºAno</h4>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/2ED573/ffffff?text=Evento+11" alt="Evento 11">
+                            <h4>Evento de Encerramento</h4>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/A55EEA/ffffff?text=Evento+12" alt="Evento 12">
+                            <h4>Feira de Ciências</h4>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/26C0CE/ffffff?text=Evento+13" alt="Evento 13">
+                            <h4>Mostra Cultural</h4>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/FD7272/ffffff?text=Evento+14" alt="Evento 14">
+                            <h4>Dia do Esporte</h4>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/9AECDB/ffffff?text=Evento+15" alt="Evento 15">
+                            <h4>Palestra Motivacional</h4>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/D63031/ffffff?text=Evento+16" alt="Evento 16">
+                            <h4>Workshop de Tecnologia</h4>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/6C5CE7/ffffff?text=Evento+17" alt="Evento 17">
+                            <h4>Semana do Meio Ambiente</h4>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/A29BFE/ffffff?text=Evento+18" alt="Evento 18">
+                            <h4>Dia da Família</h4>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/FD79A8/ffffff?text=Evento+19" alt="Evento 19">
+                            <h4>Campeonato Interno</h4>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/200x200/FDCB6E/ffffff?text=Evento+20" alt="Evento 20">
+                            <h4>Formatura</h4>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next">❯</button>
+            </div>
+            <!-- Indicadores do carrossel -->
+            <div class="carousel-indicators" id="carouselIndicators-eventos"></div>
+        </div>
+    </section>
+
+    <!-- Popup Galeria de Professores -->
+    <div id="participantesPopup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closeParticipantesPopup()">&times;</span>
+            <h2>Nossos Professores e Diretores</h2>
+            <div class="professores-grid">
+                <!-- Professores Atuais (10) -->
+                <div class="professor-card" onclick="selectProfessor(this)">
+                    <div class="professor-image">
+                        <img src="imagens/fernando.gif" alt="Fernando" id="img-prof-1">
+                    </div>
+                    <h3>Fernando</h3>
+                </div>
+
+                <div class="professor-card" onclick="selectProfessor(this)">
+                    <div class="professor-image">
+                        <img src="imagens/giovanne.gif" alt="Giovanne" id="img-prof-2">
+                    </div>
+                    <h3>Giovanne Marçal</h3>
+                </div>
+
+                <div class="professor-card" onclick="selectProfessor(this)">
+                    <div class="professor-image">
+                        <img src="imagens/Ivaldo_Informática.jpeg" alt="Ivaldo" id="img-prof-3">
+                    </div>
+                    <h3>Ivaldo Marques</h3>
+                </div>
+
+                <div class="professor-card" onclick="selectProfessor(this)">
+                    <div class="professor-image">
+                        <img src="imagens/professor-placeholder.jpg" alt="Professor" id="img-prof-4">
+                    </div>
+                    <h3>Jeanna</h3>
+                </div>
+
+                <div class="professor-card" onclick="selectProfessor(this)">
+                    <div class="professor-image">
+                        <img src="imagens/Jeanna_Matemática.png" alt="Jeanna" id="img-prof-5">
+                    </div>
+                    <h3>Jeanna</h3>
+                </div>
+
+                <div class="professor-card" onclick="selectProfessor(this)">
+                    <div class="professor-image">
+                        <img src="imagens/leandro.gif" alt="Leandro Campelo" id="img-prof-6">
+                    </div>
+                    <h3>Leandro Campelo</h3>
+                </div>
+
+                <div class="professor-card" onclick="selectProfessor(this)">
+                    <div class="professor-image">
+                        <img src="imagens/paulo.gif" alt="Paulo Manini" id="img-prof-7">
+                    </div>
+                    <h3>Paulo Manini</h3>
+                </div>
+
+                <div class="professor-card" onclick="selectProfessor(this)">
+                    <div class="professor-image">
+                        <img src="imagens/ricardo.gif" alt="Ricardo Sorgon" id="img-prof-8">
+                    </div>
+                    <h3>Ricardo Sorgon</h3>
+                </div>
+
+                <div class="professor-card" onclick="selectProfessor(this)">
+                    <div class="professor-image">
+                        <img src="imagens/rita.gif" alt="Rita Demarchi" id="img-prof-9">
+                    </div>
+                    <h3>Rita Demarchi</h3>
+                </div>
+
+                <div class="professor-card" onclick="selectProfessor(this)">
+                    <div class="professor-image">
+                        <img src="imagens/Sérgio_Inglês.png" alt="Sérgio" id="img-prof-10">
+                    </div>
+                    <h3>Sérgio</h3>
+                </div>
+
+                <!-- Novos Espaços (6 adicionais) -->
+                <div class="professor-card" onclick="selectProfessor(this)">
+                    <div class="professor-image">
+                        <img src="https://via.placeholder.com/200x200/e8f5e8/2e7d32?text=+" alt="Professor"
+                            id="img-prof-11">
+                    </div>
+                    <h3>Novo Professor</h3>
+                </div>
+
+                <div class="professor-card" onclick="selectProfessor(this)">
+                    <div class="professor-image">
+                        <img src="https://via.placeholder.com/200x200/e8f5e8/2e7d32?text=+" alt="Professor"
+                            id="img-prof-12">
+                    </div>
+                    <h3>Novo Professor</h3>
+                </div>
+
+                <div class="professor-card" onclick="selectProfessor(this)">
+                    <div class="professor-image">
+                        <img src="https://via.placeholder.com/200x200/e8f5e8/2e7d32?text=+" alt="Professor"
+                            id="img-prof-13">
+                    </div>
+                    <h3>Novo Professor</h3>
+                </div>
+
+                <div class="professor-card" onclick="selectProfessor(this)">
+                    <div class="professor-image">
+                        <img src="https://via.placeholder.com/200x200/e8f5e8/2e7d32?text=+" alt="Professor"
+                            id="img-prof-14">
+                    </div>
+                    <h3>Novo Professor</h3>
+                </div>
+
+                <div class="professor-card" onclick="selectProfessor(this)">
+                    <div class="professor-image">
+                        <img src="https://via.placeholder.com/200x200/e8f5e8/2e7d32?text=+" alt="Professor"
+                            id="img-prof-15">
+                    </div>
+                    <h3>Novo Professor</h3>
+                </div>
+
+                <div class="professor-card" onclick="selectProfessor(this)">
+                    <div class="professor-image">
+                        <img src="https://via.placeholder.com/200x200/e8f5e8/2e7d32?text=+" alt="Professor"
+                            id="img-prof-16">
+                    </div>
+                    <h3>Novo Professor</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer id="contato" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IFSP - Campus Cubatão</h3>
+                    <p>Instituto Federal de São Paulo</p>
+                    <p>Programa de Educação de Jovens e Adultos</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>📧 proeja@ifsp.edu.br</p>
+                    <p>📞 (13) 3207-8100</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Endereço</h3>
+                    <p>Rua Maria Cristina Medeiros, 1000</p>
+                    <p>Cubatão - SP, CEP 11533-160</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 IFSP Campus Cubatão - proeja. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
