@@ -110,7 +110,7 @@ class Carousel {
 // Inicialização
 document.addEventListener('DOMContentLoaded', function () {
     // Inicializa os carrosséis
-    const carouselAlunos = new Carousel('carousel-alunos', 'carouselTrack-alunos', 'carouselIndicators-alunos');
+    // const carouselAlunos = new Carousel('carousel-alunos', 'carouselTrack-alunos', 'carouselIndicators-alunos');
     const carouselEventos = new Carousel('carousel-eventos', 'carouselTrack-eventos', 'carouselIndicators-eventos');
     const carouselImagens2 = new Carousel('carousel-imagens2', 'carouselTrack-imagens2', 'carouselIndicators-imagens2');
 
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Auto-play com controle de pausa
     setInterval(() => {
         if (!isPaused) {
-            if (carouselAlunos) carouselAlunos.move(1);
+            // if (carouselAlunos) carouselAlunos.move(1);
             if (carouselEventos) carouselEventos.move(1);
             if (carouselImagens2) carouselImagens2.move(1);
         }
