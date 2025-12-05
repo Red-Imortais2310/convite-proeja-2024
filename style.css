@@ -315,8 +315,6 @@ body {
     height: 500px;
     object-fit: contain;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
     padding: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     z-index: 2;
@@ -591,11 +589,21 @@ body {
 }
 
 .carousel-slide img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 15px;
     margin-bottom: 1rem;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel-slide img:hover {
+    transform: scale(1.5);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-btn {
@@ -1007,4 +1015,57 @@ body {
     .professor-card h3 {
         font-size: 1rem;
     }
+}
+
+/* Hero Background Carousel */
+.hero-bg-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.bg-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    animation: kenBurns 20s infinite;
+}
+
+.bg-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+@keyframes kenBurns {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.glass-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.1) 0%, rgba(76, 175, 80, 0.05) 50%, rgba(102, 187, 106, 0.05) 100%);
+    backdrop-filter: blur(0px);
+    z-index: 1;
 }

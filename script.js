@@ -112,12 +112,31 @@ document.addEventListener('DOMContentLoaded', function () {
     // Inicializa os carrosséis
     const carouselAlunos = new Carousel('carousel-alunos', 'carouselTrack-alunos', 'carouselIndicators-alunos');
     const carouselEventos = new Carousel('carousel-eventos', 'carouselTrack-eventos', 'carouselIndicators-eventos');
+    const carouselImagens2 = new Carousel('carousel-imagens2', 'carouselTrack-imagens2', 'carouselIndicators-imagens2');
 
-    // Auto-play
+    // Controle de pausa do auto-play
+    let isPaused = false;
+
+    // Auto-play com controle de pausa
     setInterval(() => {
-        if (carouselAlunos) carouselAlunos.move(1);
-        if (carouselEventos) carouselEventos.move(1);
-    }, 4000);
+        if (!isPaused) {
+            if (carouselAlunos) carouselAlunos.move(1);
+            if (carouselEventos) carouselEventos.move(1);
+            if (carouselImagens2) carouselImagens2.move(1);
+        }
+    }, 5000);
+
+    // Pausar carrossel ao passar mouse sobre imagens
+    const carouselImages = document.querySelectorAll('.carousel-slide img');
+    carouselImages.forEach(img => {
+        img.addEventListener('mouseenter', () => {
+            isPaused = true;
+        });
+
+        img.addEventListener('mouseleave', () => {
+            isPaused = false;
+        });
+    });
 
     // Animação de fade-in nos cards
     const observerOptions = {
@@ -274,3 +293,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+
+// Hero Background Carousel Auto-Play
+document.addEventListener('DOMContentLoaded', function () {
+    const bgSlides = document.querySelectorAll('.bg-slide');
+    if (bgSlides.length > 0) {
+        let currentBgSlide = 0;
+
+        function nextBackgroundSlide() {
+            // Remove active da slide atual
+            bgSlides[currentBgSlide].classList.remove('active');
+
+            // Incrementa e faz loop
+            currentBgSlide = (currentBgSlide + 1) % bgSlides.length;
+
+            // Adiciona active na próxima slide
+            bgSlides[currentBgSlide].classList.add('active');
+        }
+
+        // Troca a cada 5 segundos
+        setInterval(nextBackgroundSlide, 5000);
+    }
+});
