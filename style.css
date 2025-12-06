@@ -575,7 +575,7 @@ body {
 
 .carousel-track {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 1.0s ease-in-out;
     gap: 1rem;
 }
 

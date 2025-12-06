@@ -248,11 +248,25 @@ document.addEventListener('keydown', function (e) {
 });
 
 
+// Funções do Popup CONEMAC
+function openConemacPopup() {
+    document.getElementById("conemacPopup").style.display = "flex";
+}
+
+function closeConemacPopup() {
+    document.getElementById("conemacPopup").style.display = "none";
+}
+
 // Fechar popup ao clicar fora
 window.onclick = function (event) {
-    const popup = document.getElementById('participantesPopup');
-    if (event.target == popup) {
+    const popupParticipantes = document.getElementById('participantesPopup');
+    const popupConemac = document.getElementById('conemacPopup');
+
+    if (event.target == popupParticipantes) {
         closeParticipantesPopup();
+    }
+    if (event.target == popupConemac) {
+        closeConemacPopup();
     }
 }
 // Toggle menu mobile simples
