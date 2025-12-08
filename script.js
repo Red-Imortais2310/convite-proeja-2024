@@ -330,3 +330,32 @@ document.addEventListener('DOMContentLoaded', function () {
         setInterval(nextBackgroundSlide, 5000);
     }
 });
+function openEventoPopup() {
+    // Criar o popup
+    const popup = document.createElement('div');
+    popup.className = 'popup-overlay';
+    popup.innerHTML = `
+        <div class="popup-content">
+            <span class="close-popup" onclick="closeEventoPopup()">&times;</span>
+            <h3>📚 Atividades em Sala</h3>
+            <p>Confira mais detalhes sobre nossas atividades educacionais!</p>
+            <div class="popup-buttons">
+                <button onclick="window.open('https://convite-proeja-2024.vercel.app/', '_blank')" class="popup-btn primary">
+                    🌐 Visitar Site
+                </button>
+                <button onclick="closeEventoPopup()" class="popup-btn secondary">
+                    ❌ Fechar
+                </button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(popup);
+}
+
+function closeEventoPopup() {
+    const popup = document.querySelector('.popup-overlay');
+    if (popup) {
+        popup.remove();
+    }
+}
+
