@@ -331,31 +331,100 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 function openEventoPopup() {
-    // Criar o popup
+    // Remove qualquer popup existente
+    const existingPopup = document.querySelector('.popup-overlay-evento');
+    if (existingPopup) {
+        existingPopup.remove();
+    }
+    
+    // Criar popup com estilos inline (garantido)
     const popup = document.createElement('div');
-    popup.className = 'popup-overlay';
+    popup.className = 'popup-overlay-evento';
+    popup.style.cssText = `
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(0, 0, 0, 0.8) !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        z-index: 99999 !important;
+    `;
+    
     popup.innerHTML = `
-        <div class="popup-content">
-            <span class="close-popup" onclick="closeEventoPopup()">&times;</span>
-            <h3>📚 Atividades em Sala</h3>
-            <p>Confira mais detalhes sobre nossas atividades educacionais!</p>
-            <div class="popup-buttons">
-                <button onclick="window.open('https://convite-proeja-2024.vercel.app/', '_blank')" class="popup-btn primary">
-                    🌐 Visitar Site
+        <div style="
+            background: white !important;
+            padding: 30px !important;
+            border-radius: 15px !important;
+            max-width: 500px !important;
+            width: 90% !important;
+            text-align: center !important;
+            position: relative !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+        ">
+            <span onclick="closeEventoPopup()" style="
+                position: absolute !important;
+                top: 10px !important;
+                right: 15px !important;
+                font-size: 28px !important;
+                cursor: pointer !important;
+                color: #e74c3c !important;
+                font-weight: bold !important;
+            ">&times;</span>
+            
+            <h3 style="margin-bottom: 15px; color: #2c3e50;">📚 Museu da Língua Portuguesa</h3>
+            <p style="margin-bottom: 20px; color: #34495e;">
+                Trabalho desenvolvido pelos alunos: Site sobre o Museu da Língua Portuguesa e Pinacoteca de SP!
+            </p>
+            
+            <div style="margin-top: 25px;">
+                <button onclick="window.open('https://convite-proeja-2024.vercel.app/', '_blank')" style="
+                    margin: 8px !important;
+                    padding: 12px 25px !important;
+                    border: none !important;
+                    border-radius: 8px !important;
+                    cursor: pointer !important;
+                    font-weight: 600 !important;
+                    background: #3498db !important;
+                    color: white !important;
+                    font-size: 16px !important;
+                    transition: all 0.3s !important;
+                " onmouseover="this.style.background='#2980b9'" onmouseout="this.style.background='#3498db'">
+                    🌐 Visitar Site do Projeto
                 </button>
-                <button onclick="closeEventoPopup()" class="popup-btn secondary">
+                <br>
+                <button onclick="closeEventoPopup()" style="
+                    margin: 8px !important;
+                    padding: 12px 25px !important;
+                    border: none !important;
+                    border-radius: 8px !important;
+                    cursor: pointer !important;
+                    font-weight: 600 !important;
+                    background: #95a5a6 !important;
+                    color: white !important;
+                    font-size: 16px !important;
+                    transition: all 0.3s !important;
+                " onmouseover="this.style.background='#7f8c8d'" onmouseout="this.style.background='#95a5a6'">
                     ❌ Fechar
                 </button>
             </div>
         </div>
     `;
+    
     document.body.appendChild(popup);
+    
+    // Bloqueia scroll
+    document.body.style.overflow = 'hidden';
 }
 
 function closeEventoPopup() {
-    const popup = document.querySelector('.popup-overlay');
+    const popup = document.querySelector('.popup-overlay-evento');
     if (popup) {
         popup.remove();
+        document.body.style.overflow = 'auto'; // Restaura scroll
     }
 }
+
 
