@@ -380,7 +380,7 @@ function openEventoPopup() {
             </p>
             
             <div style="margin-top: 25px;">
-                <button onclick="window.open('https://convite-proeja-2024.vercel.app/', '_blank')" style="
+                <button onclick="window.open('https://site-museu-ling-pina.vercel.app//', '_blank')" style="
                     margin: 8px !important;
                     padding: 12px 25px !important;
                     border: none !important;
